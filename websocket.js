@@ -5,7 +5,6 @@ let connections = [];
 let userCount = 0;
 
 server.on('connection', socket => {
-    console.log('new connection');
     connections.push(socket);
     ++userCount;
     socket.on('message', messageData => {
@@ -61,7 +60,5 @@ server.on('connection', socket => {
                 }
             });
         });
-
-        console.log('close connection');
     });
 });
